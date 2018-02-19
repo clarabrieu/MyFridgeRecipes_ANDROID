@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="isen.fr.myfridgerecipes.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/img_fridge"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="150dp"
+        android:contentDescription="@string/imgFridge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fridge" />
+
+    <ImageView
+        android:id="@+id/img_manual"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="150dp"
+        android:contentDescription="@string/imgManual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_fridge"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/manual" />
+
+    <ImageView
+        android:id="@+id/img_barcode"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginStart="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_barcode" android:contentDescription="@string/imgBarcode" />
+
+    <ImageView
+        android:id="@+id/img_restaurant"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="80dp"
+        android:contentDescription="@string/imgRestaurant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/recipes" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:text="Fridge"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_fridge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="10dp"
+        android:text="Manual"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_manual" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:text="Scanner"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_barcode" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="10dp"
+        android:text="Recipes"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_restaurant" />
+
+</android.support.constraint.ConstraintLayout>
