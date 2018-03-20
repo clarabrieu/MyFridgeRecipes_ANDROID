@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">MyFridgeRecipes</string>
-    <string name="tabBar">rectangle</string>
-    <string name="imgFridge">fridge</string>
-    <string name="imgManual">manual</string>
-    <string name="imgBarcode">barcode</string>
-    <string name="imgRestaurant">restaurant</string>
-</resources>
