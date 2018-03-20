@@ -12,15 +12,13 @@
             android:id="@+id/rowCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            />
+            android:buttonTint="@color/checkbox"/>
 
         <ImageView
             android:id="@+id/rowImageView"
             android:layout_gravity="right"
             android:layout_width="48dp"
-            android:layout_height="48dp"
-            />
+            android:layout_height="48dp" />
 
         <TextView
             android:id="@+id/rowTextView"

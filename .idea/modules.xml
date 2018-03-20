@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://C:\Users\margot.germain\AndroidStudioProjects\MyFridgeRecipes_ANDROID-master (1)\MyFridgeRecipes_ANDROID-master\MyFridgeRecipes.iml" filepath="C:\Users\margot.germain\AndroidStudioProjects\MyFridgeRecipes_ANDROID-master (1)\MyFridgeRecipes_ANDROID-master\MyFridgeRecipes.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MyFridgeRecipes_ANDROID-master.iml" filepath="$PROJECT_DIR$/MyFridgeRecipes_ANDROID-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyFridgeRecipes_ANDROID.iml" filepath="$PROJECT_DIR$/MyFridgeRecipes_ANDROID.iml" />
+      <module fileurl="file://D:\Nouveau dossier\M1\AndroidStudioProjects\MyFridgeRecipes_ANDROID\MyFridgeRecipes_ANDROID-master.iml" filepath="D:\Nouveau dossier\M1\AndroidStudioProjects\MyFridgeRecipes_ANDROID\MyFridgeRecipes_ANDROID-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\margot.germain\AndroidStudioProjects\MyFridgeRecipes_ANDROID-master (1)\MyFridgeRecipes_ANDROID-master\app\app.iml" filepath="C:\Users\margot.germain\AndroidStudioProjects\MyFridgeRecipes_ANDROID-master (1)\MyFridgeRecipes_ANDROID-master\app\app.iml" />
+      <module fileurl="file://D:\Nouveau dossier\M1\AndroidStudioProjects\MyFridgeRecipes_ANDROID\app\app.iml" filepath="D:\Nouveau dossier\M1\AndroidStudioProjects\MyFridgeRecipes_ANDROID\app\app.iml" />
     </modules>
   </component>
 </project>

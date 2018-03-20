@@ -165,48 +165,47 @@ public class ManualActivity extends AppCompatActivity {
         btnLookup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String str = "Products added : \n";
+                String str = "Product(s) added :";
 
                for (int i=0; i<items.size(); i++){
                     if (items.get(i).isChecked()){
                         switch(i){
                             case 0:
-                                str += "Banana\n";
+                                str += "\nBanana";
                                 break;
                             case 1:
-                                str += "Carrot\n";
+                                str += "\nCarrot";
                                 break;
                             case 2:
-                                str += "Chicken\n";
+                                str += "\nChicken";
                                 break;
                             case 3:
-                                str += "Corn\n";
+                                str += "\nCorn";
                                 break;
                             case 4:
-                                str += "Egg\n";
+                                str += "\nEgg";
                                 break;
                             case 5:
-                                str += "Lemon\n";
+                                str += "\nLemon";
                                 break;
                             case 6:
-                                str += "Mushroom\n";
+                                str += "\nMushroom";
                                 break;
                             case 7:
-                                str += "Onion\n";
+                                str += "\nOnion";
                                 break;
                             case 8:
-                                str += "Oyster\n";
+                                str += "\nOyster";
                                 break;
                             case 9:
-                                str += "Pineapple\n";
+                                str += "\nPineapple";
                                 break;
                             case 10:
-                                str += "Pasta\n";
+                                str += "\nPasta";
                                 break;
                             case 11:
-                                str += "Tomato\n";
+                                str += "\nTomato";
                                 break;
-
                         }
                     }
                 }
