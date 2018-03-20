@@ -2,7 +2,9 @@ package isen.fr.myfridgerecipes;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -100,28 +103,12 @@ public class ManualActivity extends AppCompatActivity {
 
             viewHolder.checkBox.setTag(position);
 
-            /*
-            viewHolder.checkBox.setOnCheckedChangeListener(
-                    new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    list.get(position).checked = b;
-
-                    Toast.makeText(getApplicationContext(),
-                            itemStr + "onCheckedChanged\nchecked: " + b,
-                            Toast.LENGTH_LONG).show();
-                }
-            });
-            */
 
             viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     boolean newState = !list.get(position).isChecked();
                     list.get(position).checked = newState;
-                    //Toast.makeText(getApplicationContext(),
-                      //      itemStr + "setOnClickListener\nchecked: " + newState,
-                        //    Toast.LENGTH_LONG).show();
                 }
             });
 
@@ -138,6 +125,8 @@ public class ManualActivity extends AppCompatActivity {
     List<Item> items;
     ListView listView;
     ItemsListAdapter myItemsListAdapter;
+    EditText input;
+    String getInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,11 +156,13 @@ public class ManualActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String str = "Product(s) added :";
 
+
                for (int i=0; i<items.size(); i++){
                     if (items.get(i).isChecked()){
                         switch(i){
                             case 0:
                                 str += "\nBanana";
+
                                 break;
                             case 1:
                                 str += "\nCarrot";
@@ -210,15 +201,6 @@ public class ManualActivity extends AppCompatActivity {
                     }
                 }
 
-                /*
-                int cnt = myItemsListAdapter.getCount();
-                for (int i=0; i<cnt; i++){
-                    if(myItemsListAdapter.isChecked(i)){
-                        str += i + "\n";
-                    }
-                }
-                */
-
                 Toast.makeText(ManualActivity.this,
                         str,
                         Toast.LENGTH_LONG).show();
@@ -226,18 +208,63 @@ public class ManualActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void dialogEventBarcode(View view){
         btnBarcode.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View view){
-                openDialog();
+            public void onClick(View view) {
+                AlertDialog.Builder diag = new AlertDialog.Builder(ManualActivity.this);
+                input = new EditText(ManualActivity.this);
+                diag.setView(input).setCancelable(false)
+                        .setPositiveButton("Validate", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                getInput = input.getText().toString();
+                                Toast.makeText(ManualActivity.this, getInput, Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        });
 
+                AlertDialog alert = diag.create();
+                alert.setTitle("Enter the barcode");
+                alert.show();
             }
         });
 
     }
 
-    public void openDialog(){
+    public void dialogEventProduct(View view){
+        btnManual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder diag = new AlertDialog.Builder(ManualActivity.this);
+                input = new EditText(ManualActivity.this);
+                diag.setView(input).setCancelable(false)
+                        .setPositiveButton("Validate", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                getInput = input.getText().toString();
+                                Toast.makeText(ManualActivity.this, getInput, Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        });
 
+                AlertDialog alert = diag.create();
+                alert.setTitle("Enter the product");
+                alert.show();
+            }
+        });
 
     }
 

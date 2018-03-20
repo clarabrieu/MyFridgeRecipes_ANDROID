@@ -29,17 +29,19 @@
                 android:id="@+id/btn_barcode"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
-                android:text="Enter barcode"
                 android:layout_marginRight="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="dialogEventBarcode"
+                android:text="Enter barcode"
                 android:textColor="@color/White" />
 
             <Button
                 android:id="@+id/btn_manual"
                 android:layout_width="150dp"
-                android:layout_marginLeft="10dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:background="@color/colorPrimaryDark"
+                android:onClick="dialogEventProduct"
                 android:text="Enter product"
                 android:textColor="@color/White" />
 
