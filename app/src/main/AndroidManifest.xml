@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ScannerActivity" />
-        <activity android:name=".FridgeActivity"></activity>
+        <activity android:name=".FridgeActivity" />
+        <activity android:name=".CallBackInterface"></activity>
     </application>
 
 </manifest>

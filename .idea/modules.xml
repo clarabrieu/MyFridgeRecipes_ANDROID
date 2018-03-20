@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyFridgeRecipes.iml" filepath="$PROJECT_DIR$/MyFridgeRecipes.iml" />
+      <module fileurl="file://D:\Documents\Nouveau dossier\MyFridgeRecipesAndroid\MyFridgeRecipes_ANDROID\MyFridgeRecipes.iml" filepath="D:\Documents\Nouveau dossier\MyFridgeRecipesAndroid\MyFridgeRecipes_ANDROID\MyFridgeRecipes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyFridgeRecipes_ANDROID.iml" filepath="$PROJECT_DIR$/MyFridgeRecipes_ANDROID.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
