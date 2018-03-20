@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".ScannerActivity" />
         <activity android:name=".FridgeActivity" />
-        <activity android:name=".CallBackInterface"></activity>
+        <activity android:name=".ManualActivity"></activity>
     </application>
 
 </manifest>
