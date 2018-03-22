@@ -103,13 +103,17 @@ public class FridgeActivity extends AppCompatActivity  {
 
     }
 
-    
+
     public ArrayList<String> getArrayList(String key){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         Gson gson = new Gson();
         String json = prefs.getString(key, null);
         Type type = new TypeToken<ArrayList<String>>() {}.getType();
         return gson.fromJson(json, type);
+    }
+
+    public void clickDelete(){
+        
     }
 }
 
