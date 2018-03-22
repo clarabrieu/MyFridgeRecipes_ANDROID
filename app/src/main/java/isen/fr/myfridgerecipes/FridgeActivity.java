@@ -98,27 +98,6 @@ public class FridgeActivity extends AppCompatActivity  {
         btnDelete.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick (View v){
-                 /*ArrayList <String> productList =new ArrayList<>();
-
-                 List<Product> stList = ((ProductAdapter) mAdapter).getStudentist();
-
-
-
-                 ArrayList<String> stringList =  getArrayList("ProductList");
-                 if (stringList == null){
-                     stringList = new ArrayList<>();
-                 }
-
-                 for (int i = 0; i < stList.size(); i++) {
-                     Product singleStudent = stList.get(i);
-                     if (singleStudent.isSelected() == false) {
-                         productList.add(singleStudent.getName().toString());
-                     }
-                 }
-                 saveArrayList(productList, "ProductList");
-                 //saveArrayList(null, "ProductList");
-                 Intent intent = new Intent(FridgeActivity.this, MainActivity.class);
-                 startActivity(intent);*/
                  List<Product> stList = ((ProductAdapter) mAdapter).getStudentist();
                  ArrayList <String> productList2 =new ArrayList<>();
                  for (int i = 0; i < stList.size(); i++) {
@@ -156,9 +135,6 @@ public class FridgeActivity extends AppCompatActivity  {
                             }
 
                         }
-
-                        //((TextView) findViewById(R.id.ivMail)).setText(String.valueOf(status));
-
                     }
 
                     @Override
