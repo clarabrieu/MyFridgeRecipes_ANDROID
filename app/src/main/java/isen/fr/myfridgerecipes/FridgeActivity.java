@@ -33,6 +33,7 @@ public class FridgeActivity extends AppCompatActivity  {
     private Button btnSelection;
     public String scan;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
