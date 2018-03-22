@@ -31,6 +31,7 @@ public class FridgeActivity extends AppCompatActivity  {
     public List<Product> productList;
 
     private Button btnSelection;
+    public String scan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +39,9 @@ public class FridgeActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_fridge);
 
         btnSelection = (Button) findViewById(R.id.btnShow);
-        productList = new ArrayList<>();
+        this.productList = new ArrayList<>();
 
-
+        scan = null;
 
 
 
@@ -103,7 +104,11 @@ public class FridgeActivity extends AppCompatActivity  {
                         int status=productResults.getStatus();
                         if(status==1){
                             String product= productResults.getProductName().getProduct();
-                            //((TextView) findViewById(R.id.idProduct)).setText(product);
+                            if(product!=null) {
+                                Intent intent = new Intent(FridgeActivity.this, FridgeActivity.class);
+                                intent.putExtra("product", product);
+                                startActivity(intent);
+                            }
 
                         }
 
@@ -124,19 +129,36 @@ public class FridgeActivity extends AppCompatActivity  {
 
     @Override
     protected void onResume() {
+        ArrayList <String> productList2;
         super.onResume();
 
         ArrayList<String> stringList =  getArrayList("ProductList");
-
+        productList2 = new ArrayList<>();
         if (stringList == null){
             stringList = new ArrayList<>();
         }
         for(String item : stringList) {
             productList.add(new Product(item,false));
+            productList2.add(item);
         }
+        Intent intent = getIntent();
+        if (intent != null) {
+            String scan = intent.getStringExtra("product");
+            if(scan!=null) {
+                //productList.add(new Product(scan, false));
 
+
+
+                productList2.add(scan);
+
+                saveArrayList(productList2,"ProductList");
+
+                Intent intent2 = new Intent(FridgeActivity.this, MainActivity.class);
+                startActivity(intent2);
+
+            }
+        }
     }
-
 
     public ArrayList<String> getArrayList(String key){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -144,6 +166,15 @@ public class FridgeActivity extends AppCompatActivity  {
         String json = prefs.getString(key, null);
         Type type = new TypeToken<ArrayList<String>>() {}.getType();
         return gson.fromJson(json, type);
+    }
+
+    public void saveArrayList(ArrayList<String> list, String key){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(list);
+        editor.putString(key, json);
+        editor.apply();     // This line is IMPORTANT !!!
     }
 
     public void clickDelete(){
