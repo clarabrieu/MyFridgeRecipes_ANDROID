@@ -31,6 +31,7 @@ public class FridgeActivity extends AppCompatActivity  {
     public List<Product> productList;
 
     private Button btnSelection;
+    private Button btnDelete;
     public String scan;
 
 
@@ -40,6 +41,7 @@ public class FridgeActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_fridge);
 
         btnSelection = (Button) findViewById(R.id.btnShow);
+        btnDelete = (Button) findViewById(R.id.btnDelete);
         this.productList = new ArrayList<>();
 
         scan = null;
@@ -72,7 +74,7 @@ public class FridgeActivity extends AppCompatActivity  {
 
                 for (int i = 0; i < stList.size(); i++) {
                     Product singleStudent = stList.get(i);
-                    if (singleStudent.isSelected()) {
+                    if (singleStudent.isSelected() == true) {
 
                         data = data + "\n" + singleStudent.getName().toString();
                         if(data2!=""){
@@ -92,6 +94,46 @@ public class FridgeActivity extends AppCompatActivity  {
                 startActivity(intent);
             }
         });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick (View v){
+                 /*ArrayList <String> productList =new ArrayList<>();
+
+                 List<Product> stList = ((ProductAdapter) mAdapter).getStudentist();
+
+
+
+                 ArrayList<String> stringList =  getArrayList("ProductList");
+                 if (stringList == null){
+                     stringList = new ArrayList<>();
+                 }
+
+                 for (int i = 0; i < stList.size(); i++) {
+                     Product singleStudent = stList.get(i);
+                     if (singleStudent.isSelected() == false) {
+                         productList.add(singleStudent.getName().toString());
+                     }
+                 }
+                 saveArrayList(productList, "ProductList");
+                 //saveArrayList(null, "ProductList");
+                 Intent intent = new Intent(FridgeActivity.this, MainActivity.class);
+                 startActivity(intent);*/
+                 List<Product> stList = ((ProductAdapter) mAdapter).getStudentist();
+                 ArrayList <String> productList2 =new ArrayList<>();
+                 for (int i = 0; i < stList.size(); i++) {
+                     Product singleStudent = stList.get(i);
+                     if (singleStudent.isSelected() == false) {
+
+                         productList2.add(singleStudent.getName().toString());
+                     }
+
+                 }
+                 saveArrayList(productList2, "ProductList");
+                 Intent intent = new Intent(FridgeActivity.this, MainActivity.class);
+                 startActivity(intent);
+             }
+         });
 
         Intent intent = getIntent();
         if (intent != null) {
@@ -136,17 +178,14 @@ public class FridgeActivity extends AppCompatActivity  {
         super.onResume();
 
         ArrayList<String> stringList =  getArrayList("ProductList");
-
         productList2 = new ArrayList<>();
         if (stringList == null){
             stringList = new ArrayList<>();
         }
-
         for(String item : stringList) {
             productList.add(new Product(item,false));
             productList2.add(item);
         }
-
         Intent intent = getIntent();
         if (intent != null) {
             String scan = intent.getStringExtra("product");
@@ -184,38 +223,6 @@ public class FridgeActivity extends AppCompatActivity  {
         editor.apply();     // This line is IMPORTANT !!!
     }
 
-    public void clickDelete(View view){
-       /* ArrayList <String> productList2;
-        ArrayList<String> stringList =  getArrayList("ProductList");
 
-        List<Product> stList = ((ProductAdapter) mAdapter).getStudentist();
-
-        for (int i = 0; i < stList.size(); i++) {
-            Product singleStudent = stList.get(i);
-            if (singleStudent.isSelected() == true) {
-
-                singleStudent.getName().toString();
-                if(data2!=""){
-                    data2+=","+singleStudent.getName().toString();
-                }else{
-                    data2+=singleStudent.getName().toString();
-                }
-            }
-
-        }
-
-
-
-        productList2 = new ArrayList<>();
-        if (stringList == null){
-            stringList = new ArrayList<>();
-        }
-        for(String item : stringList) {
-            productList.add(new Product(item,false));
-            productList2.add(item);
-        }
-        Intent intent = getIntent();
-    */}
 }
-
 
