@@ -23,11 +23,17 @@ public class Recipe {
     @Expose
     private String url;
 
+    @SerializedName("label")
+    @Expose
+    private String label;
+
     public List<String> getIngredientLines() { return ingredientLines; }
 
     public String getImage() { return image; }
 
     public String getUrl() { return url; }
+
+    public String getLabel() { return label; }
 
     public void setIngredientLines(List<String> ingredientLines) { this.ingredientLines = ingredientLines; }
 
@@ -35,7 +41,9 @@ public class Recipe {
         this.image = image;
     }
 
-    public void setUrl(String url) {
-        this.image = url;
+    public void setUrl(String url) { this.image = url; }
+
+    public void setLabel(String label) {
+        this.image = label;
     }
 }

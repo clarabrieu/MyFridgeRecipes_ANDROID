@@ -29,6 +29,7 @@ public class RecipeActivity extends AppCompatActivity {
                     if(count>0) {
                         String img = recipeResults.getHits().get(0).getRecipe().getImage();
                         String url = recipeResults.getHits().get(0).getRecipe().getUrl();
+                        String label = recipeResults.getHits().get(0).getRecipe().getLabel();
                         List<String> ingredient = recipeResults.getHits().get(0).getRecipe().getIngredientLines();
                         ((TextView) findViewById(R.id.count)).setText(String.valueOf(count));
                         ((TextView) findViewById(R.id.img)).setText(String.valueOf(img));
