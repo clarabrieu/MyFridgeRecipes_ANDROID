@@ -34,7 +34,7 @@ public class RecipeActivityTask extends AsyncTask<String, Void, String>
     @Override
     protected String doInBackground(String... strings) {
         String debutChaineProduit = "https://api.edamam.com/search?q=";
-        String finChaineProduit = "&app_id=0d6a8756&app_key=ce315d29c1aaa6a7d26dc963e067aa08&from=0&to=9";
+        String finChaineProduit = "&app_id=0d6a8756&app_key=ce315d29c1aaa6a7d26dc963e067aa08&from=0&to=10";
         String result = null;
         try {
             URL url = new URL(debutChaineProduit+this.product+finChaineProduit);
