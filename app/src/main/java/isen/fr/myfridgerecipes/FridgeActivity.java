@@ -72,7 +72,7 @@ public class FridgeActivity extends AppCompatActivity  {
 
                 for (int i = 0; i < stList.size(); i++) {
                     Product singleStudent = stList.get(i);
-                    if (singleStudent.isSelected() == true) {
+                    if (singleStudent.isSelected()) {
 
                         data = data + "\n" + singleStudent.getName().toString();
                         if(data2!=""){
@@ -136,14 +136,17 @@ public class FridgeActivity extends AppCompatActivity  {
         super.onResume();
 
         ArrayList<String> stringList =  getArrayList("ProductList");
+
         productList2 = new ArrayList<>();
         if (stringList == null){
             stringList = new ArrayList<>();
         }
+
         for(String item : stringList) {
             productList.add(new Product(item,false));
             productList2.add(item);
         }
+
         Intent intent = getIntent();
         if (intent != null) {
             String scan = intent.getStringExtra("product");
@@ -185,4 +188,5 @@ public class FridgeActivity extends AppCompatActivity  {
         
     }
 }
+
 
