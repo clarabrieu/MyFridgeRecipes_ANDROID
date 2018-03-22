@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="Find Recipes"
-        android:background="#00796B"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/White"
         />
 
 </LinearLayout>
