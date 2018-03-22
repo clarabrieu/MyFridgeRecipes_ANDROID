@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -278,6 +279,9 @@ public class ManualActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 getInput = input.getText().toString();
+                                Intent intent = new Intent(ManualActivity.this, FridgeActivity.class);
+                                intent.putExtra("CODE_BARRE",  getInput);
+                                startActivity(intent);
                                 Toast.makeText(ManualActivity.this, getInput, Toast.LENGTH_SHORT).show();
                             }
                         })
