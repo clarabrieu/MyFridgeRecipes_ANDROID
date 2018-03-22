@@ -54,6 +54,9 @@ public class ScannerActivity extends AppCompatActivity {
             } else {
                 Log.d("MainActivity", "Scanned");
                 Toast.makeText(this, "Product scanned : " + result.getContents(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ScannerActivity.this, FridgeActivity.class);
+                intent.putExtra("CODE_BARRE",  result.getContents());
+                startActivity(intent);
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
