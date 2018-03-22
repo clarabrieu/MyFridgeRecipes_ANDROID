@@ -47,5 +47,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //redirection vers la page RECIPE
+        final ImageView recipe = (ImageView) findViewById(R.id.img_restaurant);
+        recipe.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecipeActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

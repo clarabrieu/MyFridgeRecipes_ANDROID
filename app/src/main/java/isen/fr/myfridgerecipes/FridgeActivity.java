@@ -65,6 +65,7 @@ public class FridgeActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 String data = "";
+                String data2 = "";
                 List<Product> stList = ((ProductAdapter) mAdapter)
                         .getStudentist();
 
@@ -73,13 +74,11 @@ public class FridgeActivity extends AppCompatActivity  {
                     if (singleStudent.isSelected() == true) {
 
                         data = data + "\n" + singleStudent.getName().toString();
-      /*
-       * Toast.makeText( CardViewActivity.this, " " +
-       * singleStudent.getName() + " " +
-       * singleStudent.getEmailId() + " " +
-       * singleStudent.isSelected(),
-       * Toast.LENGTH_SHORT).show();
-       */
+                        if(data2!=""){
+                            data2+=","+singleStudent.getName().toString();
+                        }else{
+                            data2+=singleStudent.getName().toString();
+                        }
                     }
 
                 }
@@ -87,6 +86,9 @@ public class FridgeActivity extends AppCompatActivity  {
                 Toast.makeText(FridgeActivity.this,
                         "Selected Products: \n" + data, Toast.LENGTH_LONG)
                         .show();
+                Intent intent = new Intent(FridgeActivity.this, RecipeActivity.class);
+                intent.putExtra("productRecipe",  data2);
+                startActivity(intent);
             }
         });
 
@@ -148,8 +150,9 @@ public class FridgeActivity extends AppCompatActivity  {
                 //productList.add(new Product(scan, false));
 
 
-
-                productList2.add(scan);
+                if(!productList2.contains(scan)) {
+                    productList2.add(scan);
+                }
 
                 saveArrayList(productList2,"ProductList");
 
@@ -177,7 +180,7 @@ public class FridgeActivity extends AppCompatActivity  {
         editor.apply();     // This line is IMPORTANT !!!
     }
 
-    public void clickDelete(){
+    public void clickDelete(View view){
         
     }
 }
